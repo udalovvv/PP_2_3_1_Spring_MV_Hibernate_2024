@@ -27,23 +27,23 @@
             <td th:text="${user.getAge()}">name</td>
             <td th:text="${user.getEmail()}">name</td>
             <td>
-                <a th:href="@{/user/show(id=${user.getId()})}" class="btn btn-primary">show</a>
+                <a th:href="@{/show(id=${user.getId()})}" class="btn btn-primary">show</a>
                 <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#showModal">show in model</button>
             </td>
 
             <td>
-                <a th:href="@{/user/edit(id=${user.getId()})}" class="btn btn-primary">edit</a>
+                <a th:href="@{/edit(id=${user.getId()})}" class="btn btn-primary">edit</a>
                 <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#editModal">edit in model</button>
             </td>
             <td>
-                <a th:href="@{/user/delete(id=${user.getId()})}" class="btn btn-danger">Delete</a>
+                <a th:href="@{/delete(id=${user.getId()})}" class="btn btn-danger">Delete</a>
             </td>
 
         </tr>
     </table>
     <br>
 
-    <a href="/user/new" class="btn btn-primary">add User</a>
+    <a href="/add" class="btn btn-primary">add User</a>
 
     <!-- Button trigger modal -->
     <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#addUser">
@@ -62,7 +62,7 @@
                 <h1 class="modal-title fs-5" id="exampleModalLabel">Add new user</h1>
                 <br>
 
-                <form th:action="@{/user/create}" th:method="POST" th:object="${newUser}">
+                <form th:action="@{/add}" th:method="POST" th:object="${newUser}">
                     <div class="form-floating mb-3">
                         <input type="text" class="form-control" id="floatingFirsName" placeholder="name@example.com" th:field="*{firstName}">
                         <label for="floatingFirsName">FirsName</label>
@@ -131,7 +131,7 @@
             <div class="modal-body">
                 <h1 class="modal-title fs-5">Update user</h1>
                 <br>
-                <form th:action="@{/user/updatemodal}" th:method="POST" th:object="${newUser}">
+                <form th:action="@{/editmodal}" th:method="POST" th:object="${newUser}">
                     <div class="form-floating mb-3">
                         <input type="number" class="form-control is-invalid" id="idUPD" placeholder="Id" th:field="*{id}">
                         <label for="idUPD">Don't change ID</label>

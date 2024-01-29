@@ -12,21 +12,29 @@
     <div class="col-md-4 offset-md-4">
       <br>
       <h1>Edit User</h1>
-      <form th:action="@{/user/update(id=${user.getId()})}" th:method="POST" th:object="${user}">
+      <form th:action="@{/edit(id=${user.getId()})}" th:method="POST" th:object="${user}">
+
         <div class="form-floating mb-3">
-          <input type="text" class="form-control" id="floatingFirsName" placeholder="name@example.com" th:field="*{firstName}">
+          <input type="text" class="form-control" id="floatingFirsName" th:field="*{firstName}">
+          <div style="color:darkred" th:if="${#fields.hasErrors('firstName')}" th:errors="*{firstName}">firstname error</div>
           <label for="floatingFirsName">FirsName</label>
         </div>
+
         <div class="form-floating mb-3">
-          <input type="text" class="form-control" id="floatingLastName" placeholder="Password" th:field="*{lastName}">
+          <input type="text" class="form-control" id="floatingLastName" th:field="*{lastName}">
+          <div style="color:darkred" th:if="${#fields.hasErrors('lastName')}" th:errors="*{lastName}">lastname error</div>
           <label for="floatingLastName">LastName</label>
         </div>
+
         <div class="form-floating mb-3">
-          <input type="number" class="form-control" id="floatingAge" placeholder="name@example.com" th:field="*{age}">
+          <input type="number" class="form-control" id="floatingAge" th:field="*{age}">
+          <div style="color:darkred" th:if="${#fields.hasErrors('age')}" th:errors="*{age}">age error</div>
           <label for="floatingAge">Age</label>
         </div>
+
         <div class="form-floating mb-3">
-          <input type="email" class="form-control" id="floatingEmail" placeholder="Password" th:field="*{email}">
+          <input type="text" class="form-control" id="floatingEmail" th:field="*{email}">
+          <div style="color:darkred" th:if="${#fields.hasErrors('email')}" th:errors="*{email}">email error</div>
           <label for="floatingEmail">Email</label>
         </div>
 
