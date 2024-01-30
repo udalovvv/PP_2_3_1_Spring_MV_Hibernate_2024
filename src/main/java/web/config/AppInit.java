@@ -13,6 +13,7 @@ public class AppInit extends AbstractAnnotationConfigDispatcherServletInitialize
 
     /**
      * Метод, указывающий на класс конфигурации
+     * @return an array of Class objects representing the root configuration classes
      */
 
     @Override
@@ -23,6 +24,7 @@ public class AppInit extends AbstractAnnotationConfigDispatcherServletInitialize
 
     /**
      *  Добавление конфигурации, в которой инициализируем ViewResolver, для корректного отображения jsp.
+     *  @return an array of Class objects representing the servlet configuration classes
      */
     @Override
     protected Class<?>[] getServletConfigClasses() {
@@ -33,6 +35,7 @@ public class AppInit extends AbstractAnnotationConfigDispatcherServletInitialize
 
     /**
      *  Данный метод указывает url, на котором будет базироваться приложение
+     *  @return an array of String values representing the servletMappings
      *  */
     @Override
     protected String[] getServletMappings() {
